@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
@@ -8,40 +9,60 @@ int main()
     double a, b;
     char operation;
 
-    cout << "Простой калькулятор" << endl;
+    cout << "=== УЛУЧШЕННЫЙ КАЛЬКУЛЯТОР ===" << endl;
 
-    cout << "Введите первое число: ";
-    cin >> a;
-
-    cout << "Введите операцию (+, -, *, /): ";
-    cin >> operation;
-
-    cout << "Введите второе число: ";
-    cin >> b;
-
-    switch (operation)
+    while (true)
     {
-    case '+':
-        cout << "Результат: " << a + b << endl;
-        break;
+        cout << "\nВведите операцию (+, -, *, /, ^, %) или q для выхода: ";
+        cin >> operation;
 
-    case '-':
-        cout << "Результат: " << a - b << endl;
-        break;
+        if (operation == 'q')
+        {
+            cout << "Программа завершена." << endl;
+            break;
+        }
 
-    case '*':
-        cout << "Результат: " << a * b << endl;
-        break;
+        cout << "Введите первое число: ";
+        cin >> a;
 
-    case '/':
-        if (b != 0)
-            cout << "Результат: " << a / b << endl;
-        else
-            cout << "Ошибка: деление на ноль!" << endl;
-        break;
+        cout << "Введите второе число: ";
+        cin >> b;
 
-    default:
-        cout << "Неизвестная операция!" << endl;
+        switch (operation)
+        {
+        case '+':
+            cout << "Результат: " << a + b << endl;
+            break;
+
+        case '-':
+            cout << "Результат: " << a - b << endl;
+            break;
+
+        case '*':
+            cout << "Результат: " << a * b << endl;
+            break;
+
+        case '/':
+            if (b != 0)
+                cout << "Результат: " << a / b << endl;
+            else
+                cout << "Ошибка: деление на ноль!" << endl;
+            break;
+
+        case '^':
+            cout << "Результат: " << pow(a, b) << endl;
+            break;
+
+        case '%':
+            if (b != 0)
+                cout << "Результат: " << fmod(a, b) << endl;
+            else
+                cout << "Ошибка: деление на ноль!" << endl;
+            break;
+
+        default:
+            cout << "Неизвестная операция!" << endl;
+        }
     }
 
     return 0;
