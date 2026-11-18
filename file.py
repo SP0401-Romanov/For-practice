@@ -7,4 +7,4 @@ while a != 1 or a != 2:
     print("Hello, Sergey!")
   else:
     print("Введено недопустимое число")
-    a = int(input("Введите число от 1 до 2"))
+  a = int(input("Введите число от 1 до 2"))
